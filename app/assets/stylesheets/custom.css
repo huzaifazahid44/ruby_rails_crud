@@ -1,0 +1,25 @@
+.navbar {
+  background-color: rgb(11, 11, 11) !important;
+}
+
+.nav-link{
+  color: white !important;
+}
+
+#logo{
+  float: left;
+  color: white !important;
+  font-size: large;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: bold;
+}
+
+#listing-articles {
+  margin-top: 20px;
+  margin-left: 20px;
+}
+
+#home_page{
+  margin-top: 25px;
+}

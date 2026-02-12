@@ -1,26 +1,40 @@
-<h1>Listing Articles</h1>
-
-<table>
-    <thead>
-        <tr>
-            <th>Title</th>
-            <th>Description</th>
-            <th colspan="3">Actions</th>
-        </tr>
+<h1 id="listing-articles">Listing Articles</h1>
+<div class="p-5 mb-4 bg-light rounded-3" id="home_page">
+    <div class="row align-items-center">
+        <!-- Left side: Article info -->
+        <div class="col-md-6">
+            <h1 class="display-4">Browse Articles</h1>
+            <p class="lead">create edit or delete articles</p>
+        </div>
         
-    </thead>
-    <tbody>
-        <% @articles.each do |article| %>
-        <tr>
-            <td><%= article.title %></td>
-            <td><%= article.description %></td>
-            <td><%= link_to 'Show', article_path(article) %></td>
-            <td><%= link_to 'Edit', edit_article_path(article) %></td>
-            <td><%= link_to 'Delete', article_path(article), data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' } %></td>
-        </tr>
-        <% end %>
-    </tbody>
-</table>
+        <!-- Right side: Image -->
+        <div class="col-md-6 text-end">``
+            <%= image_tag "writting.png", alt: "Writing", class: "img-fluid rounded", style: "max-width: 250px;" %>
+        </div>
+    </div>
+    
+    <table>
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Description</th>
+                <th colspan="3">Actions</th>
+            </tr>
+            
+        </thead>
+        <tbody>
+            <% @articles.each do |article| %>
+            <tr>
+                <td><%= article.title %></td>
+                <td><%= article.description %></td>
+                <td><%= link_to 'Show', article_path(article) %></td>
+                <td><%= link_to 'Edit', edit_article_path(article) %></td>
+                <td><%= link_to 'Delete', article_path(article), data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' } %></td>
+            </tr>
+            <% end %>
+        </tbody>
+    </table>
 
-<br>
-<button><%= link_to 'Create Article', new_article_path %></button>
+    <br>
+    <button><%= link_to 'Create Article', new_article_path %></button>
+</div>
