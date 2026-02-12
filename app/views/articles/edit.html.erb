@@ -1,4 +1,9 @@
-<h1>Edit Article</h1>
+<h1 id="listing-articles">Edit Article</h1>
     
 <%= render "form" %>
-<%= link_to 'Cancel and go Back to Articles', articles_path %> |
+<br>
+<div class="row justify-content-center">
+  <div class="col-md-8 text-center">
+    <%= link_to 'Back to Articles', articles_path, class: 'btn btn-secondary' %>
+  </div>
+</div>
