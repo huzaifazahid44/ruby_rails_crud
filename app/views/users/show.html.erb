@@ -1,0 +1,13 @@
+<h1 class = "text-center mb-4">User Profile</h1>
+
+
+<%= gravatar_for @user ,size: 200 %>
+<br>
+<p strong class = "text-center ">Name: <%= @user.name %></p>
+<p strong class = "text-center ">Email: <%= @user.email %></p>
+<br>
+
+<div class="container my-3 px-0">
+  <%= render "articles/article" %>
+</div>
+
