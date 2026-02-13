@@ -25,6 +25,7 @@ class ArticlesController < ApplicationController
 
   def create
     @article = Article.new(article_params)
+    @article.user = User.first # temporary assignment to avoid validation error due to missing user_id.
     if @article.save
       flash[:notice] = "Article was successfully created."
       redirect_to articles_path
