@@ -3,7 +3,7 @@
     <div class="col-md-8">
       <div class="card shadow">
         <div class="card-body p-4">
-          <%= render "shared/errors" %>
+          <%= render "shared/errors", obj: @article %>
 
           <%= form_with model: @article, data: { turbo: false }, class: "needs-validation" do |form| %>
             
