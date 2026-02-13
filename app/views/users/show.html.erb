@@ -7,7 +7,12 @@
 <p strong class = "text-center ">Email: <%= @user.email %></p>
 <br>
 
-<div class="container my-3 px-0">
+<div class="row justify-content-center">
+  <div class="col-md-8 text-center">
+    <%= link_to 'Edit Profile', edit_user_path(@user), class: 'btn btn-primary' %>
+</div>    
+<br>
+<div class="container my-3 px-5">
   <%= render "articles/article" %>
 </div>
 
