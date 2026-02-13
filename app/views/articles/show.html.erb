@@ -4,6 +4,7 @@
 
     <p><strong>Title:</strong> <%= @article.title %></p>
     <p><strong>Description:</strong> <%= @article.description %></p>
+    <p><strong>Author:</strong> <%= @article.user.name if @article.user %></p>
 
 
     <%= link_to 'Back to Articles', articles_path, class: 'btn btn-secondary' %> 
