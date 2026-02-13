@@ -1,14 +1,16 @@
 <h1 id="listing-articles">Listing Articles</h1>
 <div class="p-5 mb-4 bg-light rounded-3" id="home_page">
     <div class="row align-items-center">
-        <!-- Left side: Article info -->
+
         <div class="col-md-6">
             <h1 class="display-4">Browse Articles</h1>
             <p class="lead">create edit or delete articles</p>
         </div>
-            </div>
-
+    </div>
         <%= render "article" %>
+    <div class="flickr_pagination mt-4">
+        <%= will_paginate @articles, :container => false %>
+    </div>
         <br>
         <%= link_to 'Create Article', new_article_path, class: 'btn btn-success' %>
 </div>
