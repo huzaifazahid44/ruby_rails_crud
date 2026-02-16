@@ -26,9 +26,18 @@
           <li class="nav-item">
             <%= link_to "Sign Up", signup_path, class: "nav-link signup" %>
           </li>
+          <% if logged_in? %>
           <li class="nav-item">
-           <%= link_to "Log Out", logout_path, data: { turbo_method: :delete, turbo_confirm: false }, class: "nav-link login" %>
-          </li>
+              <%= link_to current_user.name, user_path(current_user), class: "nav-link login" %>
+            </li>
+            <li class="nav-item">
+              <%= button_to "Log Out", logout_path, method: :delete, class: "nav-link logout btn btn-link p-0 m-2" %>
+            </li>
+          <% else %>
+            <li class="nav-item">
+              <%= link_to "Log in", login_path, class: "nav-link login" %>
+            </li>
+          <% end %>
         </ul>
         <form class="d-flex" role="search">
           <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
