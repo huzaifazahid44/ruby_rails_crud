@@ -17,6 +17,13 @@
               <%= form.text_area :description, class: "form-control", rows: 5, placeholder: "Enter article description" %>
             </div>
 
+            <div class="mb-3">
+              <%= form.label :categories, class: "form-label fw-bold" %>
+              <%= form.collection_select :category_ids, Category.all, :id, :name, 
+              {prompt: "Select categories from the list below(can be empty)"}, 
+              { multiple: true, size: 4, class: "form-select" } %>
+            </div>
+
             <div class="d-grid gap-2">
               <%= form.submit class: "btn btn-primary btn-lg" %>
             </div>
