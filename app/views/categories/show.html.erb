@@ -1,1 +1,30 @@
-<h1 class="text-center text-primary"> Category: <%= @category.name %></h1>
+<h1 id="Categories">Category: <%= @category.name %></h1>
+
+<%= render "category", category: @category %>
+
+<h3 id="Categories">Articles in this category:</h3>
+<% if @category.articles.any? %>
+  <div class="container-fluid px-4">
+    <div class="d-flex overflow-auto pb-3" style="gap: 1rem;">
+      <% @category.articles.each do |article| %>
+        <div class="card flex-shrink-0" style="width: 18rem;">
+          <div class="card-body">
+            <h5 class="card-title"><%= article.title %></h5>
+            <p class="card-text"><%= truncate(article.description, length: 100) %></p>
+            <p>Author: <%= article.user.name if article.user %></p>
+            <div class="d-flex gap-2">
+              <%= link_to 'Show', article_path(article), class: 'btn btn-sm btn-primary' %>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+<% else %>
+<br>
+<div class="row justify-content-center">
+  <div class="col-md-8 text-center">
+    <p class="alert alert-info">No articles in this category yet.</p>
+  </div>
+</div>
+<% end %>

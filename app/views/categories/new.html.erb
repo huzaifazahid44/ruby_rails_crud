@@ -1,25 +1,2 @@
 <h1 id="listing-articles">Create a new category</h1>
-<div class="container mt-4">
-  <div class="row justify-content-center">
-    <div class="col-md-8">
-      <div class="card shadow">
-        <div class="card-body p-4">
-          <%= render "shared/errors", obj: @category %>
-
-          <%= form_with model: @category, data: { turbo: false }, class: "needs-validation" do |form| %>
-            
-            <div class="mb-3">
-              <%= form.label :name, "Category Name", class: "form-label fw-bold" %>
-              <%= form.text_field :name, class: "form-control", placeholder: "Enter category name" %>
-            </div>
-
-            <div class="d-grid gap-2">
-              <%= form.submit "Create Category", class: "btn btn-primary btn-lg" %>
-            </div>
-            
-          <% end %>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>    
+<%= render "form", category: @category %>

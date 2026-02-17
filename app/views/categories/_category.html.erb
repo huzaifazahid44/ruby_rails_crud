@@ -1,0 +1,9 @@
+<p class="text-center"><strong>Total Articles: <%= pluralize(category.articles.count, "article") %></strong></p>
+
+<div class="row justify-content-center">
+  <div class="col-md-8 text-center">
+    <% if logged_in? && current_user.admin? %>
+      <%= link_to 'Edit Category', edit_category_path(category), class: 'btn btn-primary' %>
+    <% end %>
+  </div>    
+</div>

@@ -6,6 +6,7 @@
                 <div class="card flex-shrink-0" style="width: 18rem;">
                     <div class="card-body">
                         <h5 class="card-title"><%= category.name %></h5>
+                        <p class="card-text"><%= pluralize(category.articles.count, "article") %></p>
                         <div class="d-flex gap-2">
                             <%= link_to 'Show', category_path(category), class: 'btn btn-sm btn-primary' %>
                         </div>
