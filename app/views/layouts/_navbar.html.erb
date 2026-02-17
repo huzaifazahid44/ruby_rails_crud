@@ -17,9 +17,13 @@
               <% if logged_in? %>
                 <li><%= link_to "Create New Article", new_article_path, class: "dropdown-item" %></li>
               <% end %>
-              <li><a class="dropdown-item" href="#">Another action</a></li>
+              <% if logged_in? && current_user.admin? %>
+                <li><%= link_to "Create New Category", new_category_path, class: "dropdown-item" %></li>
+              <% end %>
               <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" href="#">Something else here</a></li>
+              <% if logged_in? %>
+                <li><%= link_to "View Categories", categories_path, class: "dropdown-item" %></li>
+              <% end %>
             </ul>
           </li>
           <li class="nav-item">
